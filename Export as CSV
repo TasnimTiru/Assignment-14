@@ -1,0 +1,19 @@
+Link: https://code.earthengine.google.com/a9b2c02a7bafb20c1afb403c65fb5113
+
+Code:
+var list = ee.List([1,2,3,4,5]).map(function(el){
+  return ee.Feature(null,{"value":el})
+})
+
+var applyMap= list.map(function(el){
+  return ee.Feature(null,{"value":el})
+})
+
+var listFc = ee.FeatureCollection(applyMap)
+print(listFc)
+
+Export.table.toDrive({
+  collection: listFc,
+  description: 'List_Feature_Collection',
+  fileFormat: 'CSV'
+});
