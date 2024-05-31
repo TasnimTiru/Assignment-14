@@ -1,0 +1,10 @@
+link: https://code.earthengine.google.com/d314b2c23a6066894bd49021e37a5681
+
+Code:
+Map.centerObject(aoi)
+print(aoi)
+
+var Properties = aoi.map(function(ft){
+  return ft.set("class","waterbody")
+})
+print (Properties)
