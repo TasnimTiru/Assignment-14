@@ -1,0 +1,8 @@
+link: https://code.earthengine.google.com/ba2c65e7e6d9153b9ab87af065dbd536
+
+
+Code:
+var list = ee.List([1,2,3,4,5]).map(function(el){
+  return ee.Feature(null,{"value":el})
+})
+print(list)
